@@ -1,0 +1,26 @@
+name = "Coder"
+license = "MIT"
+licenselink = "https://github.com/luizdepra/hugo-coder/blob/master/LICENSE.md"
+description = "A simple and clean personal blog theme for Hugo"
+homepage = "https://github.com/luizdepra/hugo-coder/"
+tags = [
+  "blog",
+  "minimal",
+  "minimalist",
+  "responsive",
+  "simple",
+  "clean",
+  "personal"
+]
+features = [
+  "analytics",
+  "favicon",
+  "pagination",
+  "single-column",
+  "syntax-highlighting"
+]
+min_version = "0.54"
+
+[author]
+  name = "Karan Singhal"
+  homepage = "https://karansinghal.com"
