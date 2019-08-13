@@ -136,7 +136,7 @@ $$
 
 Pause to consider proposition #3. Typography is visual, so it’s easy to conclude that it’s primarily an artistic or aesthetic pursuit. Not so. Typography is primarily utilitarian. "Hello"
 
-# More Text
+#### More Text
 
 Therefore, good typography is measured on a utilitarian yardstick. Typography that is aesthetically pleasant, but that doesn’t reinforce the meaning of the text, is a failure. Typography that reinforces the meaning of the text, even if aesthetically unpleasant, is a success.
 
