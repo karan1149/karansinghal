@@ -162,4 +162,6 @@ Therefore, good typography is measured on a utilitarian yardstick. Typography th
 
 Does that mean that effective typography can be ugly? Sure. Sometimes ugly is better than pretty.
 
+What he said reminded me of a folk tale about an old woman and her rooster. Every morning, the rooster crows and the sun rises immediately after. One day, after a fight with the villagers, she decides to teach said villagers a lesson and kills her rooster. In her mind, she has punished the village by plunging it into eternal darkness, but the run rises as usual, leaving her red-faced and a good rooster short. The moral of this story is made out to be the perils of arrogance but I think the tale is additionally a warning against superstition.
+
 
