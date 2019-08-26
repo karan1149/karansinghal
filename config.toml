@@ -21,8 +21,8 @@ disqusShortname = ""
     keywords = "karan,singhal,"
     avatarurl = "images/karan.png"
 
-    favicon_32 = "/img/favicon-32x32.png"
-    favicon_16 = "/img/favicon-16x16.png"
+    favicon_32 = "/images/favicon-32x32.png"
+    favicon_16 = "/images/favicon-16x16.png"
 
     footercontent = ""
 
@@ -55,7 +55,7 @@ disqusShortname = ""
     name = "LinkedIn"
     icon = "fab fa-linkedin fa-2x"
     weight = 4
-    url = "https://www.linkedin.com/in/trafficke/"
+    url = "https://www.linkedin.com/in/karan1149/"
 
 # Menu links
 [[menu.main]]
