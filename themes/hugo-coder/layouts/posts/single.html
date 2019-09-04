@@ -16,10 +16,12 @@
                 {{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}
               </time>
             </span>&nbsp; 
+            {{ if not .Page.Params.hideReadingTime }}
             <span class="reading-time">
               <i class="fas fa-clock"></i>&nbsp;
               {{ i18n "reading_time" .ReadingTime }}
             </span>
+            {{ end }}
           </div>
           {{ with .Page.Params.Categories }}{{ partial "taxonomy/categories.html" . }}{{ end }}
           {{ with .Page.Params.Tags }}{{ partial "taxonomy/tags.html" . }}{{ end }}
