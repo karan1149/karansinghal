@@ -32,7 +32,12 @@ def update_notebooks(docs_path, notebook_path, extensions=['.md'], recursion_dep
 					notebook_file_path = os.path.join(notebook_path, notebook_tag_chunks[1].replace('ipynb', 'md'))
 
 					with open(notebook_file_path, 'r') as n:
+						even = True
 						for n_line in n:
+							if n_line == '```\n':
+								n_line = '```python\n' if even else n_line
+								even = not even
+							
 							w.write(n_line)
 
 					w.write('<!-- Notebook End -->\n')
