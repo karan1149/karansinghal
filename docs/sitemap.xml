@@ -3,11 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.karansinghal.com/categories/</loc>
+    <loc>https://www.karansinghal.com/posts/example-post/</loc>
+    <lastmod>2019-09-05T13:27:24-04:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.karansinghal.com/</loc>
+    <lastmod>2019-09-05T13:27:24-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.karansinghal.com/posts/</loc>
+    <lastmod>2019-09-05T13:27:24-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.karansinghal.com/categories/</loc>
   </url>
   
   <url>
