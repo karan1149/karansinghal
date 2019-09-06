@@ -1,172 +1,21 @@
 +++ 
-draft = true
-date = 2019-08-05T22:52:06-04:00
-title = "hi"
-description = "hi"
-tags = ["hello", "notebook"]
-categories = ["notebook", "hi"]
-externalLink = ""
+draft = false
+
+title = "Example post"
+description = ""
+
+tags = []
+categories = []
 series = []
+hideReadingTime = false
+
 katex = "true"
-hideReadingTime = true
+date = 2019-09-05T13:27:24-04:00
 +++
 
-## Style Demo
+{{< notebook "Week1_Class_Exercises_Solutions_Final.ipynb" >}}
 
-# h1 Heading
-## h2 Heading
-### h3 Heading
-#### h4 Heading
-##### h5 Heading
-###### h6 Heading
-
-
----
-
-**This is bold text**
-
-__This is bold text__
-
-*This is italic text*
-
-_This is italic text_
-
-~~Deleted text~~
-
-This is text with inline math $\sum_{n=1}^{\infty} 2^{-n} = 1$ and with math blocks:
-
-$$
-\sum_{n=1}^{\infty} 2^{-n} = 1
-$$
-
-| Heading | Another heading |
-| :----:  | :-------------: |
-|  text   |      text       |
-|  text   |      text       |
-|  text   |      text       |
-
-> Block quotes are
-> written like so.
->
-> They can span multiple paragraphs,
-> if you like.
-
-Some text, and some `code` and then a nice plain [link with title](https://github.com/davidhampgonsalves/davidhampgonsalves.com-hugo "title text!").
-
-and then
-
-+ Create a list by starting a line with `+`, `-`, or `*`
-+ Sub-lists are made by indenting 2 spaces:
-  - Marker character change forces new list start:
-    * Ac tristique libero volutpat at
-+ Very easy!
-
-vs.
-
-1. Lorem ipsum dolor sit amet
-2. Consectetur adipiscing elit
-3. Integer molestie lorem at massa
-
-## Code
-
-Inline `code`
-
-``` js
-var foo = function (bar) {
-  return bar++;
-};
-
-console.log(foo(5));
-```
-
-## Hugo shortcode for figure
-
-{{< figure src="/images/N90.jpg" caption="N90 nebula, \"New stars shed light on the past\" by ESA/Hubble" >}}
-
-Enable katex by adding `katex = "true"` to the [front matter](https://gohugo.io/content-management/front-matter/)  
-
-```toml
-+++
-katex = "true"
-+++
-```
-
-It's almost a dropin alternative to the mathjax solution, you should just choose one of them.  
-
-Inline math looks like this  
-
-```tex
-This is text with inline math $\sum_{n=1}^{\infty} 2^{-n} = 1$
-```
-
-This is text with inline math $\sum_{n=1}^{\infty} 2^{-n} = 1$  
-and with math blocks:  
-
-
-```tex
-$$
-\sum_{n=1}^{\infty} 2^{-n} = 1
-$$
-```
-
-$$
-\sum_{n=1}^{\infty} 2^{-n} = 1
-$$
-
-```html
-<html>
-<p>hi</p>
-</html>
-
-```
-{{< highlight html >}}
-<section id="main">
-  <div>
-   <h1 id="title">{{ .Title }}</h1>
-    {{ range .Pages }}
-        {{ .Render "summary"}}
-    {{ end }}
-  </div>
-</section>
-{{< /highlight >}}
-
-{{< gist spf13 7896402 >}}
-
-## More Text
-
-Pause to consider proposition #3. Typography is visual, so it’s easy to conclude that it’s primarily an artistic or aesthetic pursuit. Not so. Typography is primarily utilitarian. "Hello"
-
-#### More Text
-
-Therefore, good typography is measured on a utilitarian yardstick. Typography that is aesthetically pleasant, but that doesn’t reinforce the meaning of the text, is a failure. Typography that reinforces the meaning of the text, even if aesthetically unpleasant, is a success.
-
-### More Text
-
-Does that mean that effective typography can be ugly? Sure. Sometimes ugly is better than pretty. "Hello"
-
-Pause to consider proposition #3. Typography is visual, so it’s easy to conclude that it’s primarily an artistic or aesthetic pursuit. Not so. Typography is primarily utilitarian.
-
-Therefore, good typography is measured on a utilitarian yardstick. Typography that is aesthetically pleasant, but that doesn’t reinforce the meaning of the text, is a failure. Typography that reinforces the meaning of the text, even if aesthetically unpleasant, is a success.
-
-Does that mean that effective typography can be ugly? Sure. Sometimes ugly is better than pretty.
-
-Pause to consider proposition #3. Typography is visual, so it’s easy to conclude that it’s primarily an artistic or aesthetic pursuit. Not so. Typography is primarily utilitarian.
-
-Therefore, good typography is measured on a utilitarian yardstick. Typography that is aesthetically pleasant, but that doesn’t reinforce the meaning of the text, is a failure. Typography that reinforces the meaning of the text, even if aesthetically unpleasant, is a success.
-
-Does that mean that effective typography can be ugly? Sure. Sometimes ugly is better than pretty.
-
-Pause to consider proposition #3. Typography is visual, so it’s easy to conclude that it’s primarily an artistic or aesthetic pursuit. Not so. Typography is primarily utilitarian.
-
-Therefore, good typography is measured on a utilitarian yardstick. Typography that is aesthetically pleasant, but that doesn’t reinforce the meaning of the text, is a failure. Typography that reinforces the meaning of the text, even if aesthetically unpleasant, is a success.
-
-Does that mean that effective typography can be ugly? Sure. Sometimes ugly is better than pretty.
-
-What he said reminded me of a folk tale about an old woman and her rooster. Every morning, the rooster crows and the sun rises immediately after. One day, after a fight with the villagers, she decides to teach said villagers a lesson and kills her rooster. In her mind, she has punished the village by plunging it into eternal darkness, but the run rises as usual, leaving her red-faced and a good rooster short. The moral of this story is made out to be the perils of arrogance but I think the tale is additionally a warning against superstition.
-
-
-
-# Hi
+<!-- Notebook Start -->
 
 
 # Week 1 Exercises
@@ -363,6 +212,9 @@ For homework, we will use the functions you just wrote to show that bias transfe
 ```
 
 ```
+<!-- Notebook End -->
+
+
 
 
 
