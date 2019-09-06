@@ -12,30 +12,47 @@ import karantools as kt
 import os
 
 import argparse
+from update_notebooks import update_notebooks
 
-parser = argparse.ArgumentParser(description='Publishes a Hugo site with a given commit message.')
-parser.add_argument('--m', default='Publish changes to site.',
-                    help='Commit message for publish.')
+def main():
+	parser = argparse.ArgumentParser(description='Publishes a Hugo site with a given commit message.')
+	parser.add_argument('--m', default='Publish changes to site.',
+	                    help='Commit message for publish.')
 
-args = parser.parse_args()
+	args = parser.parse_args()
 
-expected_dirs = ['themes/', 'content/', 'docs/']
+	expected_dirs = ['themes/', 'content/', 'docs/']
 
-for expected_dir in expected_dirs:
-	assert os.path.isdir(expected_dir), 'Make sure you are in the root directory of the Hugo site.'
+	for expected_dir in expected_dirs:
+		assert os.path.isdir(expected_dir), 'Make sure you are in the root directory of the Hugo site.'
 
-kt.run_command("mv docs/CNAME .")
+	## Notebook processing. ###
 
-kt.run_command("rm -rf docs/")
+	kt.run_command("jupyter nbconvert --to markdown notebooks/*.ipynb --output-dir=notebooks/outputs/")
 
-kt.run_command("hugo")
+	kt.print_bold('\nUpdating notebooks...')
+	update_notebooks('content', 'notebooks/outputs')
 
-kt.run_command("mv CNAME docs/")
+	## End notebook processing. ###
 
-kt.run_command("git reset")
+	kt.run_command("mv docs/CNAME .")
 
-kt.run_command("git add docs/")
+	kt.run_command("rm -rf docs/")
 
-kt.run_command('git commit -m "%s"' % args.m)
+	kt.run_command("hugo")
 
-kt.run_command('git push')
+	kt.run_command("mv CNAME docs/")
+
+	kt.run_command("git reset")
+
+	kt.run_command("git add docs/")
+
+	kt.run_command("git status")
+
+	kt.run_command('git commit -m "%s"' % args.m)
+
+	kt.run_command('git push')
+
+
+if __name__=='__main__':
+	main()
