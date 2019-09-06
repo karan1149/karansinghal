@@ -114,7 +114,8 @@
   <div class="notebook-button">
   	<i class="fab fa-python"></i> &nbsp;Try on Colab
   </div>
-</a> <!-- Notebook Start --></p>
+</a>
+<!-- Notebook Start --></p>
 
 <h1 id="week-1-exercises">Week 1 Exercises</h1>
 
@@ -186,118 +187,6 @@ Shape of gender vector:  (300,)</pre></div>
 <p>Feel free to play around with the model by changing the input word in the below cell! How does the score for &lsquo;programmer&rsquo; compare to the score for &lsquo;nurse&rsquo;? For &lsquo;homemaker&rsquo;? What does this tell us about our word vectors?</p>
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">compute_linear_regression(&#39;nurse&#39;)</pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">8.855267</pre></div>
 <h2 id="part-2">Part 2</h2>
-
-<p>Now we will build a more sophisticated logistic regression model to make predictions on our word vectors. Eventually, this model will actually learn the weights (<em>w</em>) and bias (<em>b</em>) by itself! It will also output a probability between 0 and 1 that a word is associated with females. (1 represents a word that is very &lsquo;female&rsquo; according to our word vectors, 0 represents a word that is not)</p>
-
-<p>All we will do is tell this model that 1 represents female and 0 represents male, and, alarmingly, bias from our word vectors will transfer to our model.</p>
-
-<p>For these in-class exercises, you will build this model and learn how to train it. For homework, you will actually train it and see the results.</p>
-
-<p>As a warmup, fill in the below function to calculate the sigmoid of a scalar value. Use <em>np.exp</em> instead of python&rsquo;s built-in.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">def sigmoid(z):
-    # YOUR CODE HERE
-    return 1.0 / (1 + np.exp(-z))
-    # END CODE
-print(&#34;sigmoid(0.5) is %f&#34; % sigmoid(0.5))</pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">sigmoid(0.5) is 0.622459</pre></div>
-<p><strong>Expected output:</strong></p>
-
-<p>sigmoid(0.5) is 0.622459</p>
-
-<p>Next, fill in the below function to compute logistic regression on a word given weights and bias. Note that you are not training the model yet, just computing what is known as the &ldquo;forward pass&rdquo;. This should look similar to your <em>compute_linear_regression</em> function, but you are using the weights and bias given instead of the <em>gender_vector</em>, and you are using sigmoid to produce the final output.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">def compute_logistic_regression(word, weights, bias):
-    # YOUR CODE HERE
-    word_vector = get_word_vector(word)
-    return sigmoid(np.dot(weights, word_vector) + bias)
-    # END CODE
-
-np.random.seed(42)
-rand_weights = np.random.randn(VEC_SIZE)
-rand_bias = np.random.rand()
-print(&#34;Predicted output: %f&#34; % compute_logistic_regression(&#39;hello&#39;, rand_weights, rand_bias))</pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Predicted output: 0.000089</pre></div>
-<p><strong>Expected output:</strong></p>
-
-<p>Predicted output: 0.000089</p>
-
-<p>Don&rsquo;t read too much into this output, it was randomly generated.</p>
-
-<p>Congratulations on completing the first set of class exercises!</p>
-
-<p>For homework, we will use the functions you just wrote to show that bias transfers from the word vectors to models trained on them.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"></pre></div>
-<!-- Notebook End -->
-
-<!-- Notebook Start -->
-
-<h1 id="week-1-exercises-1">Week 1 Exercises</h1>
-
-<p>Today we will explore gender bias in natural language processing. We will learn about our first models to probe gender bias in word vectors. As a reminder, word vectors are a machine&rsquo;s representation of a word, learned from reading a large corpus of text to understand the context that words are used in. For example, since the words &ldquo;good&rdquo; and &ldquo;great&rdquo; are used in similar contexts, they have similar word vectors!</p>
-
-<p>These kinds of word vectors are used in everything from Google Search to Spotify recommendations, so if they are biased, this is a major problem.</p>
-
-<p>Today we will be using GloVe vectors, which are a standard type of word vector used in a variety of real-world applications. These word vectors were trained on 6 billion word tokens, sourced from Wikipedia 2014 + Gigaword5. If you&rsquo;re interested you can find more information <a href="https://nlp.stanford.edu/projects/glove/">here</a>.</p>
-
-<p>Run the below cell by highlighting it and typing Shift+Enter. This will import the required packages and download the GloVe vectors, which will take a few minutes.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">import torchtext.vocab as vocab
-import numpy as np
-np.random.seed(42)
-
-VEC_SIZE = 300
-glove = vocab.GloVe(name=&#39;6B&#39;, dim=VEC_SIZE)</pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">.vector_cache/glove.6B.zip: 862MB [03:05, 4.65MB/s]                           
-100%|█████████▉| 399433/400000 [00:44&lt;00:00, 8886.22it/s]</pre></div>
-<h2 id="part-1-1">Part 1</h2>
-
-<p>Below we have included a short helper function that retrieves the word vector for a given word.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">def get_word_vector(word):
-    return glove.vectors[glove.stoi[word]].numpy()</pre></div>
-<p>Observe the results of this helper function below. Notice that we are outputting a numpy array of dimensionality (300,). This means that the output is a 300-dimensional vector.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">good = get_word_vector(&#39;good&#39;) # get the word vector for &#39;good&#39;
-print(good.shape)</pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">(300,)</pre></div>
-<p>Below, use the above vector and the word vector for &lsquo;great&rsquo; to determine the cosine similarity between &lsquo;good&rsquo; and &lsquo;great&rsquo;. Do the same for &lsquo;good&rsquo; and &lsquo;human&rsquo; (two words that are less similar). You&rsquo;ll need <em>np.linalg.norm</em> and <em>np.dot</em>.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">great = get_word_vector(&#39;great&#39;) # YOUR CODE HERE
-human = get_word_vector(&#39;human&#39;) # YOUR CODE HERE
-def compute_cosine_similarity(a, b):
-    # YOUR CODE HERE:
-    return np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b))
-    # END CODE
-
-print(&#34;Good-great similarity %f&#34; % compute_cosine_similarity(good, great))
-print(&#34;Good-human similarity %f&#34; % compute_cosine_similarity(good, human))</pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Good-great similarity 0.641005
-Good-human similarity 0.313640</pre></div>
-<p><strong>Expected output:</strong></p>
-
-<p>Good-great similarity 0.641005</p>
-
-<p>Good-human similarity 0.313640</p>
-
-<p>Now, use our helper function to retrieve the &ldquo;gender vector&rdquo;, or the vector representing &lsquo;woman&rsquo; minus the vector representing &lsquo;man&rsquo; (woman - man).</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"># YOUR CODE HERE
-man = get_word_vector(&#39;man&#39;)
-woman = get_word_vector(&#39;woman&#39;)
-gender_vector = woman - man
-# END CODE
-print(&#39;First value of gender vector: %f &#39; % gender_vector[0])
-print(&#39;Shape of gender vector: &#39;, gender_vector.shape)</pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">First value of gender vector: -0.220370 
-Shape of gender vector:  (300,)</pre></div>
-<p><strong>Expected output:</strong></p>
-
-<p>First value of gender vector: -0.220370</p>
-
-<p>Shape of gender vector:  (300,)</p>
-
-<p>Now fill in the below function that computes linear regression on any word. Use the gender_vector to provide weights (<em>w</em>), and do not use a bias term (<em>b</em>). You&rsquo;ll need our helper function <em>get_word_vector</em> and <em>np.dot</em>.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">def compute_linear_regression(word):
-    # YOUR CODE HERE
-    word_vector = get_word_vector(word)
-    return np.dot(gender_vector, word_vector)
-    # END CODE</pre></div>
-<p>Check to make sure your model matches the expected output for &lsquo;programmer&rsquo;:</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">compute_linear_regression(&#39;programmer&#39;)</pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">-1.0347012</pre></div>
-<p><strong>Expected output:</strong>
--1.0347012</p>
-
-<p>Feel free to play around with the model by changing the input word in the below cell! How does the score for &lsquo;programmer&rsquo; compare to the score for &lsquo;nurse&rsquo;? For &lsquo;homemaker&rsquo;? What does this tell us about our word vectors?</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">compute_linear_regression(&#39;nurse&#39;)</pre></div><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">8.855267</pre></div>
-<h2 id="part-2-1">Part 2</h2>
 
 <p>Now we will build a more sophisticated logistic regression model to make predictions on our word vectors. Eventually, this model will actually learn the weights (<em>w</em>) and bias (<em>b</em>) by itself! It will also output a probability between 0 and 1 that a word is associated with females. (1 represents a word that is very &lsquo;female&rsquo; according to our word vectors, 0 represents a word that is not)</p>
 
