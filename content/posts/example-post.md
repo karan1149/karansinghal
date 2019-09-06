@@ -2,14 +2,14 @@
 draft = false
 
 title = "Example post"
-description = ""
+description = "Hey"
 
 tags = []
 categories = []
 series = []
 hideReadingTime = false
 
-katex = "true"
+katex = "false"
 date = 2019-09-05T13:27:24-04:00
 +++
 
@@ -213,6 +213,7 @@ For homework, we will use the functions you just wrote to show that bias transfe
 
 ```
 <!-- Notebook End -->
+
 
 
 
