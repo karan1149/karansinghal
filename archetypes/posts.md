@@ -10,5 +10,5 @@ series = []
 
 date = {{ .Date }}
 hideReadingTime = false
-katex = "true"
+katex = false
 +++

@@ -9,7 +9,7 @@ categories = []
 series = []
 hideReadingTime = false
 
-katex = "false"
+katex = false
 date = 2019-09-05T13:27:24-04:00
 +++
 
