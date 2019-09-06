@@ -73,13 +73,13 @@
     list-style: none;
     padding: 0;
     li {
-      font-size: 1.8rem;
+      font-size: 2.0rem;
       @media only screen and (max-width : 768px) {
         margin: 1.6rem 0 1.6rem 0;
       }
       .date {
         display: inline-block;
-        width: 20.0rem;
+        width: 22.0rem;
         text-align: right;
         margin-right: 3.0rem;
         @media only screen and (max-width : 768px) {
@@ -88,7 +88,7 @@
         }
       }
       .title {
-        font-size: 1.8rem;
+        font-size: 2.0rem;
         color: $fg-color;
         font-family: $heading-font-family;
         font-weight: 700;
