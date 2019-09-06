@@ -17,7 +17,7 @@
       <pubDate>Thu, 05 Sep 2019 13:27:24 -0400</pubDate>
       
       <guid>https://www.karansinghal.com/posts/example-post/</guid>
-      <description> &amp;nbsp;View on GitHub    &amp;nbsp;Try on Colab   </description>
+      <description>&amp;nbsp;View on GitHub    &amp;nbsp;Try on Colab   Week 1 Exercises Today we will explore gender bias in natural language processing. We will learn about our first models to probe gender bias in word vectors. As a reminder, word vectors are a machine&amp;rsquo;s representation of a word, learned from reading a large corpus of text to understand the context that words are used in. For example, since the words &amp;ldquo;good&amp;rdquo; and &amp;ldquo;great&amp;rdquo; are used in similar contexts, they have similar word vectors!</description>
     </item>
     
   </channel>
