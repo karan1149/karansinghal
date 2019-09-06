@@ -40,7 +40,7 @@ def update_notebooks(docs_path, notebook_path, extensions=['.md'], recursion_dep
 							
 							w.write(n_line)
 
-					w.write('<!-- Notebook End -->\n')
+					w.write('<!-- Notebook End -->')
 
 		os.remove(doc_path)
 		os.rename(doc_path + '_phtemp', doc_path)

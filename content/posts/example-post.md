@@ -213,4 +213,3 @@ For homework, we will use the functions you just wrote to show that bias transfe
 
 ```
 <!-- Notebook End -->
-
