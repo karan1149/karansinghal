@@ -29,7 +29,7 @@ Today we will be using GloVe vectors, which are a standard type of word vector u
 Run the below cell by highlighting it and typing Shift+Enter. This will import the required packages and download the GloVe vectors, which will take a few minutes.
 
 
-```
+```python
 import torchtext.vocab as vocab
 import numpy as np
 np.random.seed(42)
@@ -45,7 +45,7 @@ glove = vocab.GloVe(name='6B', dim=VEC_SIZE)
 Below we have included a short helper function that retrieves the word vector for a given word.
 
 
-```
+```python
 def get_word_vector(word):
     return glove.vectors[glove.stoi[word]].numpy()
 ```
@@ -53,7 +53,7 @@ def get_word_vector(word):
 Observe the results of this helper function below. Notice that we are outputting a numpy array of dimensionality (300,). This means that the output is a 300-dimensional vector.
 
 
-```
+```python
 good = get_word_vector('good') # get the word vector for 'good'
 print(good.shape)
 ```
@@ -64,7 +64,7 @@ print(good.shape)
 Below, use the above vector and the word vector for 'great' to determine the cosine similarity between 'good' and 'great'. Do the same for 'good' and 'human' (two words that are less similar). You'll need *np.linalg.norm* and *np.dot*.
 
 
-```
+```python
 great = get_word_vector('great') # YOUR CODE HERE
 human = get_word_vector('human') # YOUR CODE HERE
 def compute_cosine_similarity(a, b):
@@ -89,7 +89,7 @@ Good-human similarity 0.313640
 Now, use our helper function to retrieve the "gender vector", or the vector representing 'woman' minus the vector representing 'man' (woman - man). 
 
 
-```
+```python
 # YOUR CODE HERE
 man = get_word_vector('man')
 woman = get_word_vector('woman')
@@ -112,7 +112,7 @@ Shape of gender vector:  (300,)
 Now fill in the below function that computes linear regression on any word. Use the gender_vector to provide weights (*w*), and do not use a bias term (*b*). You'll need our helper function *get_word_vector* and *np.dot*.
 
 
-```
+```python
 def compute_linear_regression(word):
     # YOUR CODE HERE
     word_vector = get_word_vector(word)
@@ -123,7 +123,7 @@ def compute_linear_regression(word):
 Check to make sure your model matches the expected output for 'programmer':
 
 
-```
+```python
 compute_linear_regression('programmer')
 ```
 
@@ -140,7 +140,7 @@ compute_linear_regression('programmer')
 Feel free to play around with the model by changing the input word in the below cell! How does the score for 'programmer' compare to the score for 'nurse'? For 'homemaker'? What does this tell us about our word vectors?
 
 
-```
+```python
 compute_linear_regression('nurse')
 ```
 
@@ -162,7 +162,7 @@ For these in-class exercises, you will build this model and learn how to train i
 As a warmup, fill in the below function to calculate the sigmoid of a scalar value. Use *np.exp* instead of python's built-in.
 
 
-```
+```python
 def sigmoid(z):
     # YOUR CODE HERE
     return 1.0 / (1 + np.exp(-z))
@@ -180,7 +180,7 @@ sigmoid(0.5) is 0.622459
 Next, fill in the below function to compute logistic regression on a word given weights and bias. Note that you are not training the model yet, just computing what is known as the "forward pass". This should look similar to your *compute_linear_regression* function, but you are using the weights and bias given instead of the *gender_vector*, and you are using sigmoid to produce the final output.
 
 
-```
+```python
 def compute_logistic_regression(word, weights, bias):
     # YOUR CODE HERE
     word_vector = get_word_vector(word)
@@ -209,10 +209,12 @@ Congratulations on completing the first set of class exercises!
 For homework, we will use the functions you just wrote to show that bias transfers from the word vectors to models trained on them.
 
 
-```
+```python
 
 ```
 <!-- Notebook End -->
+
+
 
 
 
