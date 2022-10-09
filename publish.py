@@ -28,7 +28,7 @@ def main():
 
 	## Notebook processing. ###
 
-	kt.run_command("jupyter nbconvert --to markdown notebooks/*.ipynb --output-dir=notebooks/outputs/")
+	kt.run_command("python3 -m nbconvert --to markdown notebooks/*.ipynb --output-dir=notebooks/outputs/")
 
 	kt.print_bold('\nUpdating notebooks...')
 	update_notebooks('content', 'notebooks/outputs')
