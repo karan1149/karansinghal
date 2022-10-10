@@ -1,10 +1,9 @@
 <section class="container centered">
   <div class="about">
-    {{ with .Site.Params.avatarurl }}
-      <div class="avatar"><img src="{{ . | relURL }}" alt="avatar"></div>
+    {{ with .Site.Params }}
+      <div class="avatar"><img src="{{ .avatarurl | relURL }}" alt="{{ .author }}"></div>
     {{ end }}
     <h1>{{ .Site.Params.author }}</h1>
-    <h2>{{ .Site.Params.info }}</h2>
     {{ with .Site.Params.social }}
     <ul>
       {{ range sort .}}
@@ -22,5 +21,6 @@
       {{ end }}
     </ul>
     {{ end }}
+    <p id="home-info">{{ .Site.Params.info }}</p>
   </div>
 </section>
