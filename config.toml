@@ -16,7 +16,7 @@ disqusShortname = ""
 
 [params]
     author = "Karan Singhal"
-    info = ""
+    info = "I'm a researcher at Google Research, working on medical AI, foundation models, representation learning, and federated learning."
     description = "Karan Singhal's personal website."
     keywords = "karan,singhal,"
     avatarurl = "images/karan.png"
@@ -45,12 +45,12 @@ disqusShortname = ""
     name = "Twitter"
     icon = "fab fa-twitter fa-2x"
     weight = 2
-    url = "https://twitter.com/karan1149/"
+    url = "https://twitter.com/thekaransinghal/"
 [[params.social]]
-    name = "Pocket"
-    icon = "fab fa-get-pocket fa-2x"
-    weight = 4
-    url = "https://getpocket.com/@karan1149/"
+    name = "Google Scholar"
+    icon = "fab fa-solid fa-buffer fa-2x"
+    weight = 3
+    url = "https://scholar.google.com/citations?user=nMfflL0AAAAJ&hl=en"
 [[params.social]]
     name = "LinkedIn"
     icon = "fab fa-linkedin fa-2x"
@@ -58,7 +58,7 @@ disqusShortname = ""
     url = "https://www.linkedin.com/in/karan1149/"
 
 # Menu links
-[[menu.main]]
-    name = "Posts"
-    weight = 1
-    url  = "/posts/"
+# [[menu.main]]
+#     name = "Posts"
+#     weight = 1
+#     url  = "/posts/"
