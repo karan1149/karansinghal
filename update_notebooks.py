@@ -31,6 +31,9 @@ def update_notebooks(docs_path, notebook_path, extensions=['.md'], recursion_dep
 
 					notebook_file_path = os.path.join(notebook_path, notebook_tag_chunks[1].replace('ipynb', 'md'))
 
+					if not os.path.exists(notebook_file_path):
+						raise ValueError(
+							"{notebook_file_path} does not exist. Does ipynb exist, and was it converted to Markdown?")
 					with open(notebook_file_path, 'r') as n:
 						even = True
 						for n_line in n:
