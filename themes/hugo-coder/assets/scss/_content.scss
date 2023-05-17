@@ -67,6 +67,18 @@
   }
 }
 
+#home-info-container {
+  text-align: left;
+}
+
+#home-info-container ul {
+  list-style: disc;
+}
+
+#home-info-container ul li {
+  display: list-item;
+}
+
 #home-info {
   margin: 45px 0px 0px 0px;
 }
@@ -109,7 +121,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  .about {
+  #about-container {
     text-align: center;
     h1 {
       margin-top: 2.0rem;
