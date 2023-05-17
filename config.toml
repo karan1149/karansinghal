@@ -31,7 +31,7 @@ Recent updates:
 * 02/23/23: Spoke to the [Stanford MedAI group (video)](https://www.youtube.com/watch?v=saWEFDRuNJc)
 * 12/26/22: [Med-PaLM paper](https://arxiv.org/pdf/2212.13138.pdf) is on arxiv!
 
-Feel free to reach out to me via email (karan1149 {at} gmail) for speaking or just to chat."""
+Feel free to reach out to me via email (karan1149 {at} gmail) to chat or for speaking requests."""
     description = "Karan Singhal's personal website."
     keywords = "karan,singhal,medical AI,med-palm,federated,medpalm,federated learning,representation learning"
     avatarurl = "images/karan.png"
