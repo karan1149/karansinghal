@@ -71,7 +71,7 @@ Feel free to reach out to me via email (karan1149 {at} gmail)."""
     weight = 1
     url = "https://github.com/karan1149/"
 
-[[menu.main]]
-    name = "Notes"
-    weight = 1
-    url  = "/notes/"
+# [[menu.main]]
+#     name = "Notes"
+#     weight = 1
+#     url  = "/notes/"

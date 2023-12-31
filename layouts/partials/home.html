@@ -1,0 +1,32 @@
+<section class="container centered">
+    <div class="about">
+      <div id="about-container">
+        {{ with .Site.Params }}
+          <div class="avatar"><img src="{{ .avatarurl | relURL }}" alt="{{ .author }}"></div>
+        {{ end }}
+        <h1>{{ .Site.Params.author }}</h1>
+        {{ with .Site.Params.social }}
+        <ul>
+          {{ range sort .}}
+            {{ if .icon }}
+              <li>
+                <a href="{{ .url }}" aria-label="{{ .name }}" {{ if .rel }}rel="{{ .rel }}"{{ end }}>
+                  <i class="{{ .icon }}" aria-hidden="true"></i>
+                </a>
+              </li>
+            {{ else }}
+              <li>
+                <a href="{{ .url }}" aria-label="{{ .name }}" {{ if .rel }}rel="{{ .rel }}"{{ end }}>{{ .name }}</a>
+              </li>
+            {{ end }}
+          {{ end }}
+        </ul>
+        {{ end }}
+      </div>
+      <div id="home-info-container">
+        <div id="home-info">{{ .Site.Params.info | markdownify}}</div>
+        <div id="home-info-small">{{ .Site.Params.infosmall | markdownify}}</div>
+      </div>
+    </div>
+  </section>
+  
