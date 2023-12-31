@@ -16,10 +16,8 @@ disqusShortname = ""
 
 [params]
     author = "Karan Singhal"
-    info = """
-I'm a Staff Research Engineer at Google Research, co-leading teams working on medical AI, foundation models, representation learning, and federated learning. 
-
-I'm interested in nudging the trajectory of AI to be more safe and beneficial, and improving health outcomes for billions of people. My recent work includes [Med-PaLM](https://arxiv.org/pdf/2212.13138.pdf) and [Med-PaLM 2](https://arxiv.org/pdf/2305.09617.pdf), which have been featured in Scientific American, The Economist, Forbes, CNBC, and other outlets.
+    info = """I'm a Staff Research Scientist at Google Research, co-leading teams working on medical AI, foundation models, representation learning, and federated learning."""
+    infosmall = """I want to nudge the trajectory of AI to be more safe and beneficial and improve health outcomes for billions of people. My recent work includes [Med-PaLM](https://arxiv.org/pdf/2212.13138.pdf) and [Med-PaLM 2](https://arxiv.org/pdf/2305.09617.pdf), which have been featured in Scientific American, The Economist, Forbes, CNBC, and other outlets.
 
 Recent updates:
 * 05/18/23: Spoke to Sarah and Elad about the potential of biomedical AI on the [No Priors podcast](https://open.spotify.com/episode/7nWLBMq2sxaYlAz4Ku3ndX)
@@ -32,9 +30,9 @@ Recent updates:
 * 02/23/23: Spoke to the [Stanford MedAI group (video)](https://www.youtube.com/watch?v=saWEFDRuNJc)
 * 12/26/22: [Med-PaLM paper](https://arxiv.org/pdf/2212.13138.pdf) is on arxiv!
 
-Feel free to reach out to me via email (karan1149 {at} gmail) to chat or for speaking requests."""
-    description = "Karan Singhal's personal website."
-    keywords = "karan,singhal,medical AI,med-palm,federated,medpalm,federated learning,representation learning"
+Feel free to reach out to me via email (karan1149 {at} gmail)."""
+    description = "Karan Singhal is a Staff Research Scientist at Google Research, co-leading teams working on medical AI, foundation models, representation learning, and federated learning."
+    keywords = "karan,singhal,medical AI,med-palm,federated,medpalm,federated learning,representation learning,stanford,google,medlm"
     avatarurl = "images/karan.png"
 
     favicon_32 = "/images/favicon-32x32.png"
@@ -72,3 +70,8 @@ Feel free to reach out to me via email (karan1149 {at} gmail) to chat or for spe
     icon = "fab fa-github fa-2x"
     weight = 1
     url = "https://github.com/karan1149/"
+
+[[menu.main]]
+    name = "Notes"
+    weight = 1
+    url  = "/notes/"
