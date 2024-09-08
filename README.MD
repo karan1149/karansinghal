@@ -1,4 +1,4 @@
-# My homepage.
+# My homepage
 
 ## Common workflows
 
