@@ -1,6 +1,0 @@
-.DS_Store
-public/
-resources/
-__pycache__/
-notebooks/
-.hugo_build.lock
