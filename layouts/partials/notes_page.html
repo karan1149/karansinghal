@@ -1,0 +1,60 @@
+<!-- <section class="container page">
+    <article>
+      <header>
+        <h1>{{ .Title }}</h1>
+      </header>
+  
+      {{ .Content }}
+    </article>
+  </section> -->
+  
+
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">{{ .Title }}</h1>
+        </div>
+        <div class="post-meta">
+          {{ if not .Page.Params.hideDate }}
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>&nbsp;
+              <time datetime='{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}'>
+                {{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}
+              </time>
+            </span>&nbsp; 
+            {{ if not .Page.Params.hideReadingTime }}
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>&nbsp;
+              {{ i18n "reading_time" .ReadingTime }}
+            </span>
+            {{ end }}
+          </div>
+          {{ end }}
+          {{ if not .Page.Params.hideCategories }}
+          {{ with .Page.Params.Categories }}{{ partial "taxonomy/categories.html" . }}{{ end }}
+          {{ end }}
+          {{ if not .Page.Params.hideTags }}
+          {{ with .Page.Params.Tags }}{{ partial "taxonomy/tags.html" . }}{{ end }}
+          {{ end }}
+        </div>
+      </header>
+
+      <div>
+        {{ .Content }}
+      </div>
+
+
+      {{ if not .Page.Params.hideShareButtons }}
+      <footer>
+        {{ partial "posts/series.html" . }}
+        {{ partial "posts/share-buttons.html" . }}
+        {{ partial "posts/disqus.html" . }}
+        {{ partial "posts/commento.html" . }}
+      </footer>
+      {{ end }}
+    </article>
+
+    {{ partial "posts/math.html" . }}
+  </section>

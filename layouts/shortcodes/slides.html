@@ -1,8 +1,10 @@
-<div id="Container"
- style="padding-bottom:56.25%; position:relative; display:block; width: 100%">
- <iframe id="googleSlideIframe"
-  width="100%" height="100%"
-  src="{{ .Get "src" }}"
-  frameborder="0" allowfullscreen=""
-  style="position:absolute; top:0; left: 0"></iframe>
+<div class="google-slides-container" style="position: relative; width: 100%; padding-top: 61%; overflow: hidden; margin-bottom: 35px;">
+  <iframe 
+    src="{{ .Get "src" }}"
+    frameborder="0"
+    allowfullscreen="true"
+    mozallowfullscreen="true"
+    webkitallowfullscreen="true"
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+  </iframe>
 </div>
