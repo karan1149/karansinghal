@@ -1,0 +1,42 @@
+<figure style="
+  {{ if .Get "alignment" }}
+    {{ if eq .Get "alignment" "left" }}
+      text-align: left; margin-left: 0;
+    {{ else if eq .Get "alignment" "right" }}
+      text-align: right; margin-right: 0;
+    {{ else }}
+      text-align: center; margin: 0 auto;
+    {{ end }}
+  {{ else }}
+    text-align: center; margin: 0 auto;
+  {{ end }}
+  max-width: {{ .Get "max_width" }};
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+">
+  <picture>
+    <!-- WebP source for modern browsers -->
+    <source srcset="{{ .Get "webp_path" }}" type="image/webp">
+    <!-- Fallback source for older browsers -->
+    <img src="{{ .Get "fallback_path" }}" 
+         alt="{{ if .Get "caption" }}{{ .Get "caption" }}{{ else }}{{ .Get "alt" }}{{ end }}" 
+         style="width: 100%; height: auto; display: block;">
+  </picture>
+  <!-- Optional figure caption styled as a "tab" -->
+  {{ if .Get "caption" }}
+    <figcaption style="
+      background-color: rgba(241, 243, 244, .95);
+      padding: 10px 10px;
+      margin-top: 10px;
+      text-align: center;
+      font-style: italic;
+      font-size: 0.8em;
+      color: #555;
+      border-radius: 0 0 4px 4px;
+      display: block;
+      margin: 0 auto;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    ">
+      {{ .Get "caption" }}
+    </figcaption>
+  {{ end }}
+</figure>

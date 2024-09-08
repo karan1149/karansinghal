@@ -26,4 +26,4 @@ Shorter reference version with main takeaways:
 
 {{< slides src="https://docs.google.com/presentation/d/1TGBmLRiGa185NITzhTcQkLF8E777dSbPN12K7HV_nrg/embed?start=false&loop=false&delayms=3000" >}}
 
-{{< figure src="/images/karan.webp" alt="My Image" caption="This is an example image." >}}
+{{< image webp_path="/images/karan.webp" fallback_path="/images/karan_compressed.png" caption="This is an example image." max_width="70%" >}}
