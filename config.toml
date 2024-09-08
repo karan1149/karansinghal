@@ -33,7 +33,8 @@ Recent updates:
 Feel free to reach out to me via email (karan1149 {at} gmail)."""
     description = "Karan Singhal is a Staff Research Scientist at Google Research, co-leading teams working on medical AI, foundation models, representation learning, and federated learning."
     keywords = "karan,singhal,medical AI,med-palm,federated,medpalm,federated learning,representation learning,stanford,google,medlm"
-    avatarurl = "images/karan.png"
+    avatarurl = "images/karan_compressed.png"
+    avatarurl_webp = "images/karan.webp"
 
     favicon_32 = "/images/favicon-32x32.png"
     favicon_16 = "/images/favicon-16x16.png"
@@ -65,11 +66,6 @@ Feel free to reach out to me via email (karan1149 {at} gmail)."""
     icon = "fab fa-solid fa-buffer fa-2x"
     weight = 3
     url = "https://scholar.google.com/citations?user=nMfflL0AAAAJ&hl=en"
-[[params.social]]
-    name = "Github"
-    icon = "fab fa-github fa-2x"
-    weight = 1
-    url = "https://github.com/karan1149/"
 
 # [[menu.main]]
 #     name = "Notes"

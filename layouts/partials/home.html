@@ -2,7 +2,13 @@
     <div class="about">
       <div id="about-container">
         {{ with .Site.Params }}
-          <div class="avatar"><img src="{{ .avatarurl | relURL }}" alt="{{ .author }}"></div>
+          <div class="avatar">
+            <picture>
+              <source srcset="{{ .avatarurl_webp | relURL }}" type="image/webp">
+              <source srcset="{{ .avatarurl | relURL }}" type="image/jpeg"> <!-- Fallback for non-WebP browsers -->
+              <img src="{{ .avatarurl | relURL }}" alt="{{ .author }}"> <!-- Fallback if picture is not supported at all -->
+            </picture>
+          </div>
         {{ end }}
         <h1>{{ .Site.Params.author }}</h1>
         {{ with .Site.Params.social }}
