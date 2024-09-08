@@ -63,7 +63,7 @@ Feel free to reach out to me via email (karan1149 {at} gmail)."""
     url = "https://www.linkedin.com/in/karan1149/"
 [[params.social]]
     name = "Google Scholar"
-    icon = "fab fa-solid fa-buffer fa-2x"
+    icon = "fab fa-solid fa-google-scholar fa-2x"
     weight = 3
     url = "https://scholar.google.com/citations?user=nMfflL0AAAAJ&hl=en"
 
