@@ -24,8 +24,6 @@ def remove_docs_from_gitignore():
 			with open('.gitignore', 'w') as f:
 				f.writelines(lines)
 			return True
-		else:
-			kt.print_bold('"docs/" not found in .gitignore')
 	return False
 
 def add_docs_to_gitignore():
@@ -36,6 +34,10 @@ def add_docs_to_gitignore():
 			kt.print_bold('Adding "docs/" back to .gitignore')
 			with open('.gitignore', 'a') as f:
 				f.write('docs/\n')
+
+def untrack_docs_in_git():
+	kt.print_bold('Removing docs/ from Git index...')
+	kt.run_command('git rm -r --cached docs/')
 
 def main():
 	parser = argparse.ArgumentParser(description='Publishes a Hugo site with a given commit message.')
@@ -49,6 +51,9 @@ def main():
 	for expected_dir in expected_dirs:
 		assert os.path.isdir(expected_dir), 'Make sure you are in the root directory of the Hugo site.'
 
+	# Remove docs/ from .gitignore if it exists
+	removed_from_gitignore = remove_docs_from_gitignore()
+
 	## Notebook processing. ###
 
 	kt.run_command("python3 -m nbconvert --to markdown notebooks/*.ipynb --output-dir=notebooks/outputs/")
@@ -57,9 +62,6 @@ def main():
 	update_notebooks('content', 'notebooks/outputs')
 
 	## End notebook processing. ###
-
-	# Remove docs/ from .gitignore if it exists
-	removed_from_gitignore = remove_docs_from_gitignore()
 
 	kt.run_command("mv docs/CNAME .")
 
@@ -77,11 +79,19 @@ def main():
 
 	kt.run_command('git commit -m "%s"' % args.m)
 
-	kt.run_command('git push')
-
 	# Add docs/ back to .gitignore if it was removed earlier
 	if removed_from_gitignore:
 		add_docs_to_gitignore()
+
+	# Untrack docs/ from Git after publishing
+	if removed_from_gitignore:
+		untrack_docs_in_git()
+
+	kt.run_command("git status")
+
+	kt.run_command('git commit -m "Untrack docs/."')
+
+	kt.run_command('git push')
 
 
 if __name__=='__main__':

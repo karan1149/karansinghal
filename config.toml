@@ -25,7 +25,7 @@ disqusShortname = ""
 Our team at OpenAI is hiring [Research Scientists / Engineers](https://openai.com/careers/research-scientist-health-ai/)! Please apply if you have experience with practical LLM safety/alignment–no health expertise required.
 
 My previous work at Google includes [Med-PaLM](https://www.nature.com/articles/s41586-023-06291-2) and [Med-PaLM 2](https://arxiv.org/pdf/2305.09617.pdf), launched in Google Cloud and featured in Nature, Scientific American, The Economist, BBC, and other outlets."""
-    description = "Karan Singhal leads the Health AI team at OpenAI, working on LLMs for health and AI safety."
+    description = "Karan Singhal leads Health AI at OpenAI, working on LLMs for health and AI safety."
     keywords = "karan,singhal,openai,health ai,ai safety,medical AI,med-palm,federated,medpalm,federated learning,representation learning,stanford,google,medlm"
     avatarurl = "images/karan_compressed.png"
     avatarurl_webp = "images/karan.webp"
