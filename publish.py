@@ -79,6 +79,8 @@ def main():
 
 	kt.run_command('git commit -m "%s"' % args.m)
 
+	kt.run_command('git push')
+
 	# Add docs/ back to .gitignore if it was removed earlier
 	if removed_from_gitignore:
 		add_docs_to_gitignore()
@@ -90,8 +92,6 @@ def main():
 	kt.run_command("git status")
 
 	kt.run_command('git commit -m "Untrack docs/."')
-
-	kt.run_command('git push')
 
 
 if __name__=='__main__':
