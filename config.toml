@@ -1,0 +1,73 @@
+baseurl = "https://www.karansinghal.com"
+title = "Karan Singhal"
+theme = "hugo-coder"
+languagecode = "en"
+defaultcontentlanguage = "en"
+publishDir = "docs"
+
+paginate = 20
+canonifyurls = true
+
+pygmentsstyle = "friendly"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+
+disqusShortname = ""
+
+[params]
+    author = "Karan Singhal"
+    info = """I'm a Staff Research Scientist at Google Research, co-leading teams working on medical AI, foundation models, representation learning, and federated learning."""
+    infosmall = """I want to nudge the trajectory of AI to be more safe and beneficial and improve health outcomes for billions of people. My recent work includes [Med-PaLM](https://arxiv.org/pdf/2212.13138.pdf) and [Med-PaLM 2](https://arxiv.org/pdf/2305.09617.pdf), which have been featured in Scientific American, The Economist, Forbes, CNBC, and other outlets.
+
+Recent updates:
+* 05/18/23: Spoke to Sarah and Elad about the potential of biomedical AI on the [No Priors podcast](https://open.spotify.com/episode/7nWLBMq2sxaYlAz4Ku3ndX)
+* 05/16/23: [Med-PaLM 2 paper](https://arxiv.org/pdf/2305.09617.pdf) is on arxiv!
+* 05/15/23: Spoke to the [Fellows in Clinical AI](https://www.aicentre.co.uk/fellowships) program
+* 05/10/23: Our work was heavily featured at Google I/O, including previewing Med-PaLM 2 [(explanation video)](https://www.youtube.com/watch?v=k_-Z_TkHMqA) and multimodal research [(keynote feature)](https://www.youtube.com/watch?v=cNfINi5CNbY&t=811s)
+* 04/13/22: We are enabling [Med-PaLM 2 access for trusted testers](https://cloud.google.com/blog/topics/healthcare-life-sciences/sharing-google-med-palm-2-medical-large-language-model) via Google Cloud as we work towards a responsible path for generative AI in healthcare
+* 04/02/23: Spoke to the Clinical AI Journal Club
+* 03/14/23: Med-PaLM 2 [previewed](https://blog.google/technology/health/ai-llm-medpalm-research-thecheckup/) at Google Health Check Up
+* 02/23/23: Spoke to the [Stanford MedAI group (video)](https://www.youtube.com/watch?v=saWEFDRuNJc)
+* 12/26/22: [Med-PaLM paper](https://arxiv.org/pdf/2212.13138.pdf) is on arxiv!
+
+Feel free to reach out to me via email (karan1149 {at} gmail)."""
+    description = "Karan Singhal is a Staff Research Scientist at Google Research, co-leading teams working on medical AI, foundation models, representation learning, and federated learning."
+    keywords = "karan,singhal,medical AI,med-palm,federated,medpalm,federated learning,representation learning,stanford,google,medlm"
+    avatarurl = "images/karan_compressed.png"
+    avatarurl_webp = "images/karan.webp"
+
+    favicon_32 = "/images/favicon-32x32.png"
+    favicon_16 = "/images/favicon-16x16.png"
+
+    footercontent = ""
+
+    hidecredits = true
+    hidecopyright = true
+    hidefootercontent = true
+
+    rtl = false
+
+    math = true
+    custom_css = []
+
+# Social links
+[[params.social]]
+    name = "Twitter"
+    icon = "fab fa-twitter fa-2x"
+    weight = 2
+    url = "https://twitter.com/thekaransinghal/"
+[[params.social]]
+    name = "LinkedIn"
+    icon = "fab fa-linkedin fa-2x"
+    weight = 4
+    url = "https://www.linkedin.com/in/karan1149/"
+[[params.social]]
+    name = "Google Scholar"
+    icon = "fab fa-solid fa-buffer fa-2x"
+    weight = 3
+    url = "https://scholar.google.com/citations?user=nMfflL0AAAAJ&hl=en"
+
+# [[menu.main]]
+#     name = "Notes"
+#     weight = 1
+#     url  = "/notes/"

@@ -1,0 +1,28 @@
+.notebook-button-link {
+	display: inline-block;
+	text-decoration: none;
+	background-color: #f0f0f0;
+	margin: 0.9em 0.75em 0.5em 0;
+	color: #212121;
+	border-radius: 5px;
+	border: 1px solid #e5e5e5;
+	font-family: 'Inconsolata', 'Lucida Console', monospace;
+}
+
+.notebook-button-link:hover {
+	text-decoration: none;
+	color: #1565c0;
+}
+
+.notebook-button {
+  font-size: 20px;
+  transition: 25ms ease-out;
+  padding: 0.3em 0.9em 0.3em 0.9em;
+  font-size: 0.9em;
+
+  .fab {
+  	font-size: 1.4em;
+  	vertical-align: middle;
+  	padding-bottom:2px;
+  }
+}
