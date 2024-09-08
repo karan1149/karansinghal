@@ -14,6 +14,29 @@ import os
 import argparse
 from update_notebooks import update_notebooks
 
+def remove_docs_from_gitignore():
+	if os.path.isfile('.gitignore'):
+		with open('.gitignore', 'r') as f:
+			lines = f.readlines()
+		if 'docs/\n' in lines:
+			kt.print_bold('Removing "docs/" from .gitignore')
+			lines.remove('docs/\n')
+			with open('.gitignore', 'w') as f:
+				f.writelines(lines)
+			return True
+		else:
+			kt.print_bold('"docs/" not found in .gitignore')
+	return False
+
+def add_docs_to_gitignore():
+	if os.path.isfile('.gitignore'):
+		with open('.gitignore', 'r') as f:
+			lines = f.readlines()
+		if 'docs/\n' not in lines:
+			kt.print_bold('Adding "docs/" back to .gitignore')
+			with open('.gitignore', 'a') as f:
+				f.write('docs/\n')
+
 def main():
 	parser = argparse.ArgumentParser(description='Publishes a Hugo site with a given commit message.')
 	parser.add_argument('--m', default='Publish changes to site.',
@@ -35,6 +58,9 @@ def main():
 
 	## End notebook processing. ###
 
+	# Remove docs/ from .gitignore if it exists
+	removed_from_gitignore = remove_docs_from_gitignore()
+
 	kt.run_command("mv docs/CNAME .")
 
 	kt.run_command("rm -rf docs/")
@@ -52,6 +78,10 @@ def main():
 	kt.run_command('git commit -m "%s"' % args.m)
 
 	kt.run_command('git push')
+
+	# Add docs/ back to .gitignore if it was removed earlier
+	if removed_from_gitignore:
+		add_docs_to_gitignore()
 
 
 if __name__=='__main__':

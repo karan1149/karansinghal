@@ -61,7 +61,7 @@ My previous work at Google includes [Med-PaLM](https://www.nature.com/articles/s
     weight = 3
     url = "https://scholar.google.com/citations?user=nMfflL0AAAAJ&hl=en"
 
-[[menu.main]]
-    name = "Notes"
-    weight = 1
-    url  = "/notes/"
+#[[menu.main]]
+#    name = "Notes"
+#    weight = 1
+#    url  = "/notes/"
