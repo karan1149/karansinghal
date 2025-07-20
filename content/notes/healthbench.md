@@ -31,7 +31,7 @@ We built HealthBench over the last year, working with 262 physicians across 26 s
 
 Using HealthBench, we see that our Apr 2025 models define a new frontier of performance at cost, with GPT-4.1 nano outperforming GPT-4o (Aug 2024), despite being 25x cheaper. The difference between o3 and GPT-4o (.28) is greater than between GPT-4o and GPT-3.5 Turbo (.16).
 
-{{< image fallback_path="/images/healthbench/healthbench_3.jpeg" caption="New models push the performance-cost frontier." max_width="100%" >}}
+{{< image fallback_path="/images/healthbench/healthbench_3.jpeg" caption="New models push the performance-cost frontier." max_width="70%" >}}
 
 We compare our models to those of other model providers, stratified by focus areas. o3 performs best overall but headroom remains.
 
