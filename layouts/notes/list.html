@@ -1,0 +1,28 @@
+{{ define "title" }}
+  {{- if eq .Kind "taxonomy" -}}
+    {{- i18n .Data.Singular | title -}}
+    {{- print ": " -}}
+  {{- end -}}
+
+  {{- .Title }} · {{ .Site.Title -}}
+{{ end }}
+{{ define "content" }}
+<section class="container list">
+    <h1 class="title">
+      {{- .Title -}}
+    </h1>
+    I hope to occasionally share some of my notes and work here.
+    <ul>
+      {{ range .Paginator.Pages }}
+      <li>
+        {{ if ne $.Kind "taxonomy" }}
+          <span class="date">{{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}</span>
+        {{ end }}
+        <a class="title" href="{{ .Params.ExternalLink | default .RelPermalink }}">{{ .Title }}</a>
+      </li>
+      {{ end }}
+    </ul>
+    {{ partial "pagination.html" . }}
+  </section>
+{{ end }}
+
