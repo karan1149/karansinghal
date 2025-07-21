@@ -16,13 +16,13 @@
           {{ range sort .}}
             {{ if .icon }}
               <li>
-                <a href="{{ .url }}" aria-label="{{ .name }}" {{ if .rel }}rel="{{ .rel }}"{{ end }}>
+                <a href="{{ .url }}" aria-label="{{ .name }}"  target="_blank" rel="nofollow noopener noreferrer">
                   <i class="{{ .icon }}" aria-hidden="true"></i>
                 </a>
               </li>
             {{ else }}
               <li>
-                <a href="{{ .url }}" aria-label="{{ .name }}" {{ if .rel }}rel="{{ .rel }}"{{ end }}>{{ .name }}</a>
+                <a href="{{ .url }}" aria-label="{{ .name }}"  target="_blank" rel="nofollow noopener noreferrer">{{ .name }}</a>
               </li>
             {{ end }}
           {{ end }}
