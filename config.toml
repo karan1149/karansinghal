@@ -24,7 +24,7 @@ disqusShortname = ""
 
 Our team at OpenAI is hiring [Research Scientists / Engineers](https://openai.com/careers/research-engineer-scientist-health-ai/) and [Software Engineers](https://openai.com/careers/software-engineer-healthcare/)! Please apply if you are willing to run through walls to realize the benefits of AGI.
 
-My previous work at Google includes [Med-PaLM](https://www.nature.com/articles/s41586-023-06291-2) and [Med-PaLM 2](https://arxiv.org/pdf/2305.09617.pdf), launched in Google Cloud and featured in Nature, Scientific American, The Economist, BBC, and other outlets."""
+My previous work at Google includes [Med-PaLM](https://www.nature.com/articles/s41586-023-06291-2) and [Med-PaLM 2](https://www.nature.com/articles/s41591-024-03423-7), launched in Google Cloud and featured in Nature, Scientific American, The Economist, BBC, and other outlets."""
     description = "Karan Singhal leads the Health AI team at OpenAI, working on LLMs for health and AI safety."
     keywords = "karan,singhal,openai,health ai,ai safety,medical AI,med-palm,federated,medpalm,federated learning,representation learning,stanford,google,medlm"
     avatarurl = "images/karan_compressed.png"
