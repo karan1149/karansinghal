@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Karan Singhal</title>
+    <link>https://www.karansinghal.com/tags/</link>
+    <description>Recent content in Tags on Karan Singhal</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 20 Jul 2025 13:20:36 -0700</lastBuildDate>
+    <atom:link href="https://www.karansinghal.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Slides</title>
+      <link>https://www.karansinghal.com/tags/slides/</link>
+      <pubDate>Sun, 20 Jul 2025 13:20:36 -0700</pubDate>
+      <guid>https://www.karansinghal.com/tags/slides/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tweets</title>
+      <link>https://www.karansinghal.com/tags/tweets/</link>
+      <pubDate>Mon, 12 May 2025 13:54:40 -0700</pubDate>
+      <guid>https://www.karansinghal.com/tags/tweets/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Work</title>
+      <link>https://www.karansinghal.com/tags/work/</link>
+      <pubDate>Mon, 12 May 2025 13:54:40 -0700</pubDate>
+      <guid>https://www.karansinghal.com/tags/work/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

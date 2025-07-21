@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HK9XVQRTD8"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-HK9XVQRTD8');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Karan Singhal">
+    <meta name="description" content="Karan Singhal leads the Health AI team at OpenAI, working on LLMs for health and AI safety.">
+    <meta name="keywords" content="karan,singhal,openai,health ai,ai safety,medical AI,med-palm,federated,medpalm,federated learning,representation learning,stanford,google,medlm">
+
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Levels of Clinical Evaluation">
+  <meta name="twitter:description" content="Levels of Clinical Evaluation for LLMs: Towards More Realistic Evaluations">
+
+    <meta property="og:url" content="http://localhost:1313/notes/levels-of-clinical-evaluation/">
+  <meta property="og:site_name" content="Karan Singhal">
+  <meta property="og:title" content="Levels of Clinical Evaluation">
+  <meta property="og:description" content="Levels of Clinical Evaluation for LLMs: Towards More Realistic Evaluations">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="notes">
+    <meta property="article:published_time" content="2025-07-20T13:20:36-07:00">
+    <meta property="article:modified_time" content="2025-07-20T13:20:36-07:00">
+    <meta property="article:tag" content="Slides">
+
+
+    
+      <base href="http://localhost:1313/notes/levels-of-clinical-evaluation/">
+    
+    <title>
+  Levels of Clinical Evaluation · Karan Singhal
+</title>
+
+    
+      <link rel="canonical" href="http://localhost:1313/notes/levels-of-clinical-evaluation/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:700|Inconsolata|Merriweather:400,700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/eb9cc31b71.js" crossorigin="anonymous"></script>
+    <style>
+     html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}
+     
+    </style>
+    
+    
+      
+      
+      <link rel="stylesheet" href="http://localhost:1313/css/coder.css" media="screen">
+    
+
+    
+
+    
+
+    
+
+    
+    
+    <link rel="icon" type="image/png" href="http://localhost:1313/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="http://localhost:1313/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.134.1">
+  </head>
+
+  <body class=" ">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="http://localhost:1313/">
+      Karan Singhal
+    </a>
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="http://localhost:1313/notes/">Notes</a>
+          </li>
+        
+      
+      
+    </ul>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  
+  
+
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Levels of Clinical Evaluation</h1>
+        </div>
+        <div class="post-meta">
+          
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>&nbsp;
+              <time datetime='2025-07-20T13:20:36-07:00'>
+                July 20, 2025
+              </time>
+            </span>&nbsp; 
+            
+          </div>
+          
+          
+          
+        </div>
+      </header>
+
+      <div class="post-content">
+        <p>There’s been a lot of interest in evaluating frontier large language models (LLMs) for healthcare.</p>
+<p>We at OpenAI recently put out <a
+
+	
+	
+		href = "https://openai.com/index/healthbench/"
+
+		
+
+	
+
+	
+
+		target = "_blank"
+		rel = "nofollow noopener noreferrer"
+
+		>
+	
+	<span>HealthBench</span></a> and found that health performance has doubled between GPT-4o and o3, and our smallest, cheapest model today outperforms our best model from a year ago. Microsoft released their <a
+
+	
+	
+		href = "https://microsoft.ai/new/the-path-to-medical-superintelligence/"
+
+		
+
+	
+
+	
+
+		target = "_blank"
+		rel = "nofollow noopener noreferrer"
+
+		>
+	
+	<span>sequential diagnosis (MAI-DxO)</span></a> work, which found that models produced accurate diagnoses four times as often as physicians. The New York Times <a
+
+	
+	
+		href = "https://www.nytimes.com/2024/11/17/health/chatgpt-ai-doctors-diagnosis.html"
+
+		
+
+	
+
+	
+
+		target = "_blank"
+		rel = "nofollow noopener noreferrer"
+
+		>
+	
+	<span>reported</span></a> last year on a <a
+
+	
+	
+		href = "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2825395"
+
+		
+
+	
+
+	
+
+		target = "_blank"
+		rel = "nofollow noopener noreferrer"
+
+		>
+	
+	<span>study</span></a> that found that AI outperformed physicians at diagnosis, even when they were assisted by AI.</p>
+<p>Evaluations are a bedrock for the clinical AI community—and rightfully so. They are essential for helping the healthcare ecosystem build a clear understanding of AI strengths and limitations—paving the way for safe and effective adoption. They also guide the development of better AI models—we <a
+
+	
+	
+		href = "/notes/healthbench/"
+
+		
+
+	
+
+	>
+	
+	<span>noted</span></a> when sharing HealthBench that one of our primary motivations was reshaping the incentive landscape for model developers who want to see evaluations improve.</p>
+<figure style="
+  
+    text-align: center; margin: 0 auto;
+  
+  max-width: 100%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom:30px;
+">
+  <picture>
+    
+    <source srcset="" type="image/webp">
+    
+    <img src="http://localhost:1313/images/levels/levels_timeline.png" 
+         alt="Advancements in models have led to a gap between capabilities and real-world implementation." 
+         style="width: 100%; height: auto; display: block;">
+  </picture>
+  
+  
+    <figcaption style="
+      background-color: rgba(241, 243, 244, .95);
+      padding: 10px 10px;
+      margin-top: 10px;
+      text-align: center;
+      font-style: italic;
+      font-size: 0.8em;
+      color: #555;
+      border-radius: 0 0 4px 4px;
+      display: block;
+      margin: 0 auto;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    ">
+      Advancements in models have led to a gap between capabilities and real-world implementation.
+    </figcaption>
+  
+</figure>
+
+<p>Despite the importance of evaluations, the community has traditionally put too much focus on narrow, unrealistic benchmarks that measure raw model knowledge and capabilities but lack realistic data and use cases. Though we&rsquo;ve made some progress in more realistic evaluations since early work like <a
+
+	
+	
+		href = "https://www.nature.com/articles/s41586-023-06291-2"
+
+		
+
+	
+
+	
+
+		target = "_blank"
+		rel = "nofollow noopener noreferrer"
+
+		>
+	
+	<span>Med-PaLM</span></a>—we spend much less time thinking about multiple-choice exams today—I still think the community could benefit from structured thinking around the kinds of evaluations that will matter most, common pitfalls and methodological issues, and opportunities.</p>
+<p>Below, I provide an overview and raw slides from a few talks I gave last year, titled <em>&ldquo;Levels of Clinical Evaluation for LLMs: Towards More Realistic Evaluations&rdquo;</em>, after receiving requests to share more widely.</p>
+<h2 id="levels">Levels</h2>
+<p>The talk proposes a taxonomy of the clinical AI evaluation landscape and introduces &ldquo;Levels&rdquo; as a useful thinking tool for designing and assessing evaluations. My hope is that sharing this more widely helps the community move more towards realistic, high-quality evaluations that accelerate the impact of AI on human health.</p>
+<p>There are four levels, each progressively closer to real-world deployment:</p>
+<figure style="
+  
+    text-align: center; margin: 0 auto;
+  
+  max-width: 100%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom:30px;
+">
+  <picture>
+    
+    <source srcset="" type="image/webp">
+    
+    <img src="http://localhost:1313/images/levels/levels_overview.png" 
+         alt="" 
+         style="width: 100%; height: auto; display: block;">
+  </picture>
+  
+  
+</figure>
+
+<p>The clinical AI community has focused a lot on Level 1 in the past—this includes multiple-choice exams and producing diagnoses.</p>
+<figure style="
+  
+    text-align: center; margin: 0 auto;
+  
+  max-width: 100%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom:30px;
+">
+  <picture>
+    
+    <source srcset="" type="image/webp">
+    
+    <img src="http://localhost:1313/images/levels/levels_1.png" 
+         alt="" 
+         style="width: 100%; height: auto; display: block;">
+  </picture>
+  
+  
+</figure>
+
+<p>Because narrow tasks (e.g., predict diagnosis) lend themselves best to automated assessment, most Level 1 evaluations are very narrow.</p>
+<p>There&rsquo;s still room for more work in Level 1, but mainly in two areas:</p>
+<ul>
+<li>Narrow tasks that remain challenging for today&rsquo;s models, e.g., some multimodal tasks.</li>
+<li>Broader tasks that are graded automatically using a model-based grader with physician validation. HealthBench shows how this kind of <em>“meta-evaluation”</em> brings the benefits of Levels 2+ while remaining replicable.</li>
+</ul>
+<p>Otherwise, unless the goal is to create a replicable evaluation for model developers to use over time, I think we should be doing all of our work beyond Level 1.</p>
+<figure style="
+  
+    text-align: center; margin: 0 auto;
+  
+  max-width: 100%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom:30px;
+">
+  <picture>
+    
+    <source srcset="" type="image/webp">
+    
+    <img src="http://localhost:1313/images/levels/levels_2.png" 
+         alt="" 
+         style="width: 100%; height: auto; display: block;">
+  </picture>
+  
+  
+</figure>
+
+<p>Level 2 involves human evaluation of model outputs, typically by physician panels. This enables much broader evaluation of model performance across many tasks and axes, but also has challenges, including confounding factors such as response length and formatting, the cost of physician evaluation, and replication difficulty compared to Level 1. Level 2 studies are fairly common today.</p>
+<figure style="
+  
+    text-align: center; margin: 0 auto;
+  
+  max-width: 100%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom:30px;
+">
+  <picture>
+    
+    <source srcset="" type="image/webp">
+    
+    <img src="http://localhost:1313/images/levels/levels_3.png" 
+         alt="" 
+         style="width: 100%; height: auto; display: block;">
+  </picture>
+  
+  
+</figure>
+
+<p>Level 3 builds on Level 2 by using real‑world tasks, often sourced from electronic health record data. Real data often presents unique challenges for performance, safety, and reliability. This is as close as you can get to testing models in real use cases without running a real-world study (Level 4). Level 3 studies are somewhat uncommon but some examples exist.</p>
+<figure style="
+  
+    text-align: center; margin: 0 auto;
+  
+  max-width: 100%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom:30px;
+">
+  <picture>
+    
+    <source srcset="" type="image/webp">
+    
+    <img src="http://localhost:1313/images/levels/levels_4.png" 
+         alt="" 
+         style="width: 100%; height: auto; display: block;">
+  </picture>
+  
+  
+</figure>
+
+<p>Level 4 involves putting models into real workflows for clinicians or patients and measuring the real-world effects. This brings its own set of challenges but is crucial for generating real-world evidence and creating clear adoption pathways for the healthcare ecosystem. This research demands significant time and investment; the field needs targeted bets in certain areas, which can rapidly shift the Overton window of the ecosystem. Unfortunately, there have been almost no studies of this kind yet.</p>
+<p>The levels are illustrated in more detail through examples in the slides.</p>
+<p>Ultimately, to help close the gap between capabilities and implementation, I think the clinical AI community should:</p>
+<ul>
+<li>Prioritize Level 3 and 4 evaluations over Level 1 and 2</li>
+<li>Focus on the highest-value areas for evaluation</li>
+<li>Avoid methodological pitfalls that have weakened previous work</li>
+</ul>
+<h2 id="full-slides">Full slides</h2>
+<div class="google-slides-container" style="position: relative; width: 100%; padding-top: 61%; overflow: hidden; margin-bottom: 35px;">
+  <iframe 
+    src="https://docs.google.com/presentation/d/1TGBmLRiGa185NITzhTcQkLF8E777dSbPN12K7HV_nrg/embed?start=false&amp;loop=false&amp;delayms=3000"
+    frameborder="0"
+    allowfullscreen="true"
+    mozallowfullscreen="true"
+    webkitallowfullscreen="true"
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+  </iframe>
+</div>
+<p>Optionally click &lsquo;<strong>⋮</strong>&rsquo; to open speaker notes, which contain more details, definitions, and explanations.</p>
+<p>Shorter reference version with a checklist for researchers building evaluations at each level:</p>
+<div class="google-slides-container" style="position: relative; width: 100%; padding-top: 61%; overflow: hidden; margin-bottom: 35px;">
+  <iframe 
+    src="https://docs.google.com/presentation/d/16mBG_GGoLla3vli5iIPEAwZSNA28GWE-GWDelHllUx8/embed?start=false&amp;loop=false&amp;delayms=3000"
+    frameborder="0"
+    allowfullscreen="true"
+    mozallowfullscreen="true"
+    webkitallowfullscreen="true"
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+  </iframe>
+</div>
+<p><em>Caveats:</em> Please note that as a literature review, these slides are inadequate, because they are both (1) somewhat old (from last year) and (2) selective in their focus. They don&rsquo;t include some recent works mentioned above, including our own <a
+
+	
+	
+		href = "/notes/healthbench/"
+
+		
+
+	
+
+	>
+	
+	<span>HealthBench (notes)</span></a>. These slides are basically unmodified from last year. They do not reflect the opinions of OpenAI. Any omissions or errors are my own!</p>
+<p><em>Thank you to Rahul Arora, Rebecca Distler, and Robert Korom for early feedback on the slides!</em></p>
+<h2 id="citation">Citation</h2>
+<p>If you&rsquo;d like to refer to these slides and content:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>Singhal, Karan. &#34;Levels of Clinical Evaluation for LLMs&#34;. Karan Singhal (July 2025). https://www.karansinghal.com/notes/levels-of-clinical-evaluation/
+</span></span></code></pre></div><p>BibTeX:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>@article{singhal2025levels,
+</span></span><span style="display:flex;"><span>    title = {{L}evels of {C}linical {E}valuation for {L}{L}{M}s},
+</span></span><span style="display:flex;"><span>    author = {Singhal, Karan},
+</span></span><span style="display:flex;"><span>    journal = {karansinghal.com},
+</span></span><span style="display:flex;"><span>    year = {2025},
+</span></span><span style="display:flex;"><span>    month = {July},
+</span></span><span style="display:flex;"><span>    url = &#34;https://www.karansinghal.com/notes/levels-of-clinical-evaluation/&#34;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+      </div>
+
+
+      
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+    
+    
+    
+  </section>
+</footer>
+
+    </main>
+
+  </body>
+
+</html>
