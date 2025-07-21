@@ -20,7 +20,7 @@ katex = false
 
 There’s been a lot of interest in evaluating frontier large language models (LLMs) for healthcare. 
 
-We at OpenAI recently put out [HealthBench](https://openai.com/index/healthbench/) and found that health performance has doubled between GPT-4o and o3, and our smallest, cheapest model today outperforms our best model from a year ago. Microsoft released their [sequential diagnosis (MAI-DxO)](https://microsoft.ai/new/the-path-to-medical-superintelligence/) work, which found that models produced accurate diagnoses four times more often than physicians. The New York Times [reported](https://www.nytimes.com/2024/11/17/health/chatgpt-ai-doctors-diagnosis.html) last year on a [study](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2825395) that found that AI outperformed physicians at diagnosis, even when they were assisted by AI.
+We at OpenAI recently put out [HealthBench](https://openai.com/index/healthbench/) and found that health performance has doubled between GPT-4o and o3, and our smallest, cheapest model today outperforms our best model from a year ago. Microsoft released their [sequential diagnosis (MAI-DxO)](https://microsoft.ai/new/the-path-to-medical-superintelligence/) work, which found that models produced accurate diagnoses four times as often as physicians. The New York Times [reported](https://www.nytimes.com/2024/11/17/health/chatgpt-ai-doctors-diagnosis.html) last year on a [study](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2825395) that found that AI outperformed physicians at diagnosis, even when they were assisted by AI.
 
 Evaluations are a bedrock for the clinical AI community—and rightfully so. They are essential for helping the healthcare ecosystem build a clear understanding of AI strengths and limitations—paving the way for safe and effective adoption. They also guide the development of better AI models—we [noted](/notes/healthbench/) when sharing HealthBench that one of our primary motivations was reshaping the incentive landscape for model developers who want to see evaluations improve.
 
@@ -46,17 +46,17 @@ Because narrow tasks (e.g., predict diagnosis) lend themselves best to automated
 
 There's still room for more work in level 1, but mainly in two areas:
 - Narrow tasks that remain challenging for today's models, e.g., some multimodal tasks.
-- Broader tasks that are graded automatically using a model-based grader with physician validation (as shown with HealthBench, *"meta evaluation"* is a way to get the benefits of levels 2+ while creating a replicable evaluation).
+- Broader tasks that are graded automatically using a model-based grader with physician validation. HealthBench shows how this kind of *“meta-evaluation”* brings the benefits of levels 2+ while remaining replicable.
 
 Otherwise, unless the goal is to create a replicable evaluation for model developers to use over time, I think we should be doing all of our work beyond level 1.
 
 {{< image fallback_path="/images/levels/levels_2.png" max_width="100%" >}}
 
-Level 2 involves human evaluation of model outputs, typically by physician panels. This enables much broader evaluation of model performance across many tasks and axes, but also has challenges, including confounding factors like length and formatting in model responses, the cost of physician evaluation, and replication difficulty compared to level 1. Level 2 studies are fairly common today.
+Level 2 involves human evaluation of model outputs, typically by physician panels. This enables much broader evaluation of model performance across many tasks and axes, but also has challenges, including confounding factors such as response length and formatting, the cost of physician evaluation, and replication difficulty compared to level 1. Level 2 studies are fairly common today.
 
 {{< image fallback_path="/images/levels/levels_3.png" max_width="100%" >}}
 
-Level 3 is level 2 but with real-world tasks—often sourced from electronic health record data. Real data often presents unique challenges for performance, safety, and reliability. This is as close as you can get to testing models in real use cases without running a real-world study (level 4). Level 3 studies are somewhat uncommon but some examples exist.
+Level 3 builds on Level 2 by using real‑world tasks, often sourced from electronic health record data. Real data often presents unique challenges for performance, safety, and reliability. This is as close as you can get to testing models in real use cases without running a real-world study (level 4). Level 3 studies are somewhat uncommon but some examples exist.
 
 {{< image fallback_path="/images/levels/levels_4.png" max_width="100%" >}}
 
@@ -89,7 +89,7 @@ If you'd like to refer to these slides and content:
 Singhal, Karan. "Levels of Clinical Evaluation for LLMs". Karan Singhal (July 2025). https://www.karansinghal.com/notes/levels-of-clinical-evaluation/
 ```
 
-BibTex:
+BibTeX:
 ```
 @article{singhal2025levels,
     title = {{L}evels of {C}linical {E}valuation for {L}{L}{M}s},
