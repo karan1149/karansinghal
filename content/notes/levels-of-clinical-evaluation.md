@@ -32,31 +32,31 @@ Below, I provide an overview and raw slides from a few talks I gave last year, t
 
 ## Levels
 
-The talk proposes a taxonomy of the clinical AI evaluation landscape and introduces "levels" as a useful thinking tool for designing and assessing evaluations. My hope is that sharing this more widely helps the community move more towards realistic, high-quality evaluations that accelerate the impact of AI on human health.
+The talk proposes a taxonomy of the clinical AI evaluation landscape and introduces "Levels" as a useful thinking tool for designing and assessing evaluations. My hope is that sharing this more widely helps the community move more towards realistic, high-quality evaluations that accelerate the impact of AI on human health.
 
 There are four levels, each progressively closer to real-world deployment:
 
 {{< image fallback_path="/images/levels/levels_overview.png" max_width="100%" >}}
 
-The clinical AI community has focused a lot on level 1 in the past—this includes multiple-choice exams and producing diagnoses.
+The clinical AI community has focused a lot on Level 1 in the past—this includes multiple-choice exams and producing diagnoses.
 
 {{< image fallback_path="/images/levels/levels_1.png" max_width="100%" >}}
 
-Because narrow tasks (e.g., predict diagnosis) lend themselves best to automated assessment, most level 1 evaluations are very narrow. 
+Because narrow tasks (e.g., predict diagnosis) lend themselves best to automated assessment, most Level 1 evaluations are very narrow. 
 
-There's still room for more work in level 1, but mainly in two areas:
+There's still room for more work in Level 1, but mainly in two areas:
 - Narrow tasks that remain challenging for today's models, e.g., some multimodal tasks.
-- Broader tasks that are graded automatically using a model-based grader with physician validation. HealthBench shows how this kind of *“meta-evaluation”* brings the benefits of levels 2+ while remaining replicable.
+- Broader tasks that are graded automatically using a model-based grader with physician validation. HealthBench shows how this kind of *“meta-evaluation”* brings the benefits of Levels 2+ while remaining replicable.
 
-Otherwise, unless the goal is to create a replicable evaluation for model developers to use over time, I think we should be doing all of our work beyond level 1.
+Otherwise, unless the goal is to create a replicable evaluation for model developers to use over time, I think we should be doing all of our work beyond Level 1.
 
 {{< image fallback_path="/images/levels/levels_2.png" max_width="100%" >}}
 
-Level 2 involves human evaluation of model outputs, typically by physician panels. This enables much broader evaluation of model performance across many tasks and axes, but also has challenges, including confounding factors such as response length and formatting, the cost of physician evaluation, and replication difficulty compared to level 1. Level 2 studies are fairly common today.
+Level 2 involves human evaluation of model outputs, typically by physician panels. This enables much broader evaluation of model performance across many tasks and axes, but also has challenges, including confounding factors such as response length and formatting, the cost of physician evaluation, and replication difficulty compared to Level 1. Level 2 studies are fairly common today.
 
 {{< image fallback_path="/images/levels/levels_3.png" max_width="100%" >}}
 
-Level 3 builds on Level 2 by using real‑world tasks, often sourced from electronic health record data. Real data often presents unique challenges for performance, safety, and reliability. This is as close as you can get to testing models in real use cases without running a real-world study (level 4). Level 3 studies are somewhat uncommon but some examples exist.
+Level 3 builds on Level 2 by using real‑world tasks, often sourced from electronic health record data. Real data often presents unique challenges for performance, safety, and reliability. This is as close as you can get to testing models in real use cases without running a real-world study (Level 4). Level 3 studies are somewhat uncommon but some examples exist.
 
 {{< image fallback_path="/images/levels/levels_4.png" max_width="100%" >}}
 
@@ -65,7 +65,7 @@ Level 4 involves putting models into real workflows for clinicians or patients a
 The levels are illustrated in more detail through examples in the slides.
 
 Ultimately, to help close the gap between capabilities and implementation, I think the clinical AI community should:
-- Prioritize level 3 and 4 evaluations over level 1 and 2
+- Prioritize Level 3 and 4 evaluations over Level 1 and 2
 - Focus on the highest-value areas for evaluation
 - Avoid methodological pitfalls that have weakened previous work
 
