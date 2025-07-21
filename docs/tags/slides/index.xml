@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Slides on Karan Singhal</title>
+    <link>https://www.karansinghal.com/tags/slides/</link>
+    <description>Recent content in Slides on Karan Singhal</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 20 Jul 2025 13:20:36 -0700</lastBuildDate>
+    <atom:link href="https://www.karansinghal.com/tags/slides/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Levels of Clinical Evaluation</title>
+      <link>https://www.karansinghal.com/notes/levels-of-clinical-evaluation/</link>
+      <pubDate>Sun, 20 Jul 2025 13:20:36 -0700</pubDate>
+      <guid>https://www.karansinghal.com/notes/levels-of-clinical-evaluation/</guid>
+      <description>&lt;p&gt;There’s been a lot of interest in evaluating frontier large language models (LLMs) for healthcare.&lt;/p&gt;&#xA;&lt;p&gt;We at OpenAI recently put out &lt;a&#xA;&#xA;&#x9;&#xA;&#x9;&#xA;&#x9;&#x9;href = &#34;https://openai.com/index/healthbench/&#34;&#xA;&#xA;&#x9;&#x9;&#xA;&#xA;&#x9;&#xA;&#xA;&#x9;&#xA;&#xA;&#x9;&#x9;target = &#34;_blank&#34;&#xA;&#x9;&#x9;rel = &#34;nofollow noopener noreferrer&#34;&#xA;&#xA;&#x9;&#x9;&gt;&#xA;&#x9;&#xA;&#x9;&lt;span&gt;HealthBench&lt;/span&gt;&lt;/a&gt; and found that health performance has doubled between GPT-4o and o3, and our smallest, cheapest model today outperforms our best model from a year ago. Microsoft released their &lt;a&#xA;&#xA;&#x9;&#xA;&#x9;&#xA;&#x9;&#x9;href = &#34;https://microsoft.ai/new/the-path-to-medical-superintelligence/&#34;&#xA;&#xA;&#x9;&#x9;&#xA;&#xA;&#x9;&#xA;&#xA;&#x9;&#xA;&#xA;&#x9;&#x9;target = &#34;_blank&#34;&#xA;&#x9;&#x9;rel = &#34;nofollow noopener noreferrer&#34;&#xA;&#xA;&#x9;&#x9;&gt;&#xA;&#x9;&#xA;&#x9;&lt;span&gt;sequential diagnosis (MAI-DxO)&lt;/span&gt;&lt;/a&gt; work, which found that models produced accurate diagnoses four times as often as physicians. The New York Times &lt;a&#xA;&#xA;&#x9;&#xA;&#x9;&#xA;&#x9;&#x9;href = &#34;https://www.nytimes.com/2024/11/17/health/chatgpt-ai-doctors-diagnosis.html&#34;&#xA;&#xA;&#x9;&#x9;&#xA;&#xA;&#x9;&#xA;&#xA;&#x9;&#xA;&#xA;&#x9;&#x9;target = &#34;_blank&#34;&#xA;&#x9;&#x9;rel = &#34;nofollow noopener noreferrer&#34;&#xA;&#xA;&#x9;&#x9;&gt;&#xA;&#x9;&#xA;&#x9;&lt;span&gt;reported&lt;/span&gt;&lt;/a&gt; last year on a &lt;a&#xA;&#xA;&#x9;&#xA;&#x9;&#xA;&#x9;&#x9;href = &#34;https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2825395&#34;&#xA;&#xA;&#x9;&#x9;&#xA;&#xA;&#x9;&#xA;&#xA;&#x9;&#xA;&#xA;&#x9;&#x9;target = &#34;_blank&#34;&#xA;&#x9;&#x9;rel = &#34;nofollow noopener noreferrer&#34;&#xA;&#xA;&#x9;&#x9;&gt;&#xA;&#x9;&#xA;&#x9;&lt;span&gt;study&lt;/span&gt;&lt;/a&gt; that found that AI outperformed physicians at diagnosis, even when they were assisted by AI.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
